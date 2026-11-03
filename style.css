@@ -1,0 +1,68 @@
+/* هوية حسام: حبر أسود، ورق، ختم أحمر. الخطوط محفوظة داخل المشروع عشان ما نطلب شي من برّا */
+@font-face{font-family:'Ruqaa';font-weight:700;font-display:swap;src:url(ruqaa-700-ar.woff2) format('woff2')}
+@font-face{font-family:'Plex';font-weight:400;font-display:swap;src:url(plex-400-ar.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:'Plex';font-weight:400;font-display:swap;src:url(plex-400-lat.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2212}
+@font-face{font-family:'Plex';font-weight:700;font-display:swap;src:url(plex-700-ar.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:'Plex';font-weight:700;font-display:swap;src:url(plex-700-lat.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2212}
+
+:root{
+  --ink:#0e0d0c;--ink2:#171512;--ink3:#211e1a;--paper:#f4f1ea;--muted:#b5ac9e;--line:rgba(244,241,234,.13);
+  --seal:#b4321f;--seal2:#d9503a;--gold:#c9a45c;--ok:#7fbf8e;
+  --school:#e9e4d9;--qudrat:var(--seal2);--tahsili:var(--gold);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:
+  radial-gradient(70% 50% at 80% 0,#231d18 0,transparent 70%),var(--ink);
+  color:var(--paper);font:400 16px/1.7 'Plex','Segoe UI',Tahoma,system-ui,sans-serif}
+.wrap{max-width:680px;margin:0 auto;padding:28px 16px 40px}
+
+.head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.head img{flex:none;width:56px;height:56px}
+h1{margin:0;font:700 clamp(30px,7vw,42px)/1.25 'Ruqaa',serif}
+.sub{margin:2px 0 0;color:var(--muted);font-size:14.5px}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;background:var(--ink2);border:1px solid var(--line);border-radius:14px;margin-bottom:14px}
+.tabs button{font:700 16px/1 'Plex',sans-serif;color:var(--muted);background:none;border:0;border-radius:10px;padding:13px 8px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--seal);color:#fff}
+.tabs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.card{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:16px 16px 18px;margin-bottom:14px}
+h2{margin:0 0 10px;font-size:15px;color:var(--muted);font-weight:700}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field span{font-size:14px;font-weight:700}
+.field[data-part] span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:7px;background:var(--c)}
+.field[data-part="school"]{--c:var(--school)}.field[data-part="qudrat"]{--c:var(--qudrat)}.field[data-part="tahsili"]{--c:var(--tahsili)}
+input,select{width:100%;font:700 18px/1.2 'Plex',sans-serif;color:var(--paper);background:var(--ink);border:1px solid var(--line);border-radius:11px;padding:12px;min-height:48px}
+select{font-size:15px;font-weight:400}
+input::placeholder{color:#6f685e;font-weight:400}
+input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,92,.18)}
+input[aria-invalid="true"]{border-color:var(--seal2)}
+.field.off{opacity:.38}
+.small input{font-size:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+#customWeights{margin-top:12px}
+
+.result{background:linear-gradient(160deg,#2a1a14,var(--ink2) 60%);border:1px solid rgba(217,80,58,.35);border-radius:18px;padding:20px 18px;margin-bottom:14px;text-align:center}
+.rlabel{margin:0;color:var(--muted);font-weight:700;font-size:14px}
+.rvalue{margin:2px 0 4px;font:700 clamp(54px,15vw,78px)/1.1 'Plex',sans-serif;letter-spacing:-.02em;direction:ltr}
+.rvalue.bad{color:var(--seal2)}.rvalue.good{color:var(--ok)}
+.rnote{margin:0 auto;max-width:460px;color:var(--muted);font-size:15px}
+.bar{display:flex;height:14px;border-radius:99px;overflow:hidden;background:var(--ink);margin:16px 0 10px;direction:rtl}
+.bar span{display:block;height:100%;transition:width .35s ease}
+.bar [data-part="school"]{background:var(--school)}.bar [data-part="qudrat"]{background:var(--qudrat)}.bar [data-part="tahsili"]{background:var(--tahsili)}
+.legend{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:14px;color:var(--muted)}
+.legend b{color:var(--paper);direction:ltr;unicode-bidi:isolate}
+.share{margin-top:16px;font:700 15px/1 'Plex',sans-serif;color:var(--paper);background:none;border:1px solid var(--line);border-radius:11px;padding:12px 18px;cursor:pointer}
+.share:hover{border-color:var(--gold)}
+.share:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.warn{border-inline-start:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#e6dccb;margin-bottom:18px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--muted);font-size:14px}
+.foot a{color:var(--gold)}
+.toast{position:fixed;inset-inline:0;bottom:20px;margin:auto;width:max-content;max-width:calc(100% - 32px);background:var(--paper);color:var(--ink);font-weight:700;padding:10px 16px;border-radius:10px}
+
+@media (max-width:480px){.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.bar span{transition:none}}

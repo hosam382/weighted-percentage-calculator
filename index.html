@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حاسبة النسبة الموزونة</title>
+<meta name="description" content="احسب نسبتك الموزونة للقبول في الجامعات السعودية من درجة الثانوية والقدرات والتحصيلي، واعرف كم تحتاج في التحصيلي توصل هدفك. الحساب كله في جهازك.">
+<meta property="og:title" content="حاسبة النسبة الموزونة">
+<meta property="og:description" content="الثانوية والقدرات والتحصيلي: احسب نسبتك واعرف كم تحتاج توصل هدفك.">
+<meta property="og:image" content="https://hosam382.github.io/weighted-percentage-calculator/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e0d0c">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="head">
+    <img src="seal.png" alt="" width="56" height="56">
+    <div>
+      <h1>حاسبة النسبة الموزونة</h1>
+      <p class="sub">للقبول في الجامعات السعودية. الحساب كله في جهازك، وما يطلع منه شي.</p>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="نوع الحساب">
+    <button role="tab" id="tab-calc" aria-selected="true" data-mode="calc">احسب نسبتي</button>
+    <button role="tab" id="tab-need" aria-selected="false" data-mode="need">كم أحتاج؟</button>
+  </div>
+
+  <section class="card">
+    <h2>الأوزان</h2>
+    <label class="field">
+      <span>نوع التخصص</span>
+      <select id="preset">
+        <option value="sci">علمي وصحي وهندسي: ثانوية 30٪، قدرات 30٪، تحصيلي 40٪</option>
+        <option value="hum">نظري وإداري: ثانوية 50٪، قدرات 50٪</option>
+        <option value="custom">أوزان جامعتي (أدخلها بنفسي)</option>
+      </select>
+    </label>
+    <div id="customWeights" class="grid3" hidden>
+      <label class="field small"><span>وزن الثانوية ٪</span><input id="w-school" inputmode="decimal" autocomplete="off"></label>
+      <label class="field small"><span>وزن القدرات ٪</span><input id="w-qudrat" inputmode="decimal" autocomplete="off"></label>
+      <label class="field small"><span>وزن التحصيلي ٪</span><input id="w-tahsili" inputmode="decimal" autocomplete="off"></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>درجاتك</h2>
+    <div class="grid3">
+      <label class="field" data-part="school"><span>الثانوية</span><input id="s-school" inputmode="decimal" placeholder="مثلاً 95" autocomplete="off"></label>
+      <label class="field" data-part="qudrat"><span>القدرات</span><input id="s-qudrat" inputmode="decimal" placeholder="مثلاً 80" autocomplete="off"></label>
+      <label class="field" data-part="tahsili"><span>التحصيلي</span><input id="s-tahsili" inputmode="decimal" placeholder="مثلاً 85" autocomplete="off"></label>
+    </div>
+    <div id="needRow" class="grid2" hidden>
+      <label class="field"><span>النسبة الموزونة اللي تبيها</span><input id="target" inputmode="decimal" placeholder="مثلاً 90" autocomplete="off"></label>
+      <label class="field"><span>أبي أعرف كم أحتاج في</span>
+        <select id="unknown">
+          <option value="tahsili">التحصيلي</option>
+          <option value="qudrat">القدرات</option>
+          <option value="school">الثانوية</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <section class="result" aria-live="polite">
+    <p id="resultLabel" class="rlabel">نسبتك الموزونة</p>
+    <p id="resultValue" class="rvalue">—</p>
+    <p id="resultNote" class="rnote">اكتب درجاتك وتطلع النتيجة على طول.</p>
+    <div id="bar" class="bar" hidden>
+      <span data-part="school"></span><span data-part="qudrat"></span><span data-part="tahsili"></span>
+    </div>
+    <ul id="legend" class="legend" hidden></ul>
+    <button id="share" class="share" type="button">انسخ رابط النتيجة</button>
+  </section>
+
+  <aside class="warn">
+    <b>تنبيه مهم:</b> هذي صيغ شائعة وليست رسمية. كل جامعة تعلن أوزانها في دليل القبول، وتتغير من سنة لسنة،
+    فتأكد من موقع الجامعة واختر «أوزان جامعتي» وأدخلها.
+  </aside>
+
+  <footer class="foot">
+    <span>صنعها حسام حسين خدا بخش</span>
+    <a href="https://github.com/hosam382/weighted-percentage-calculator">الكود مفتوح على GitHub</a>
+  </footer>
+</main>
+<div id="toast" class="toast" role="status" hidden></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

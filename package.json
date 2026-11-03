@@ -1,0 +1,11 @@
+{
+  "name": "weighted-percentage-calculator",
+  "version": "1.0.0",
+  "description": "حاسبة النسبة الموزونة للقبول في الجامعات السعودية",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "author": "Hassam Hussain Khada Bakhsa"
+}

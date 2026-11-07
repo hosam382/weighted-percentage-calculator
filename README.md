@@ -1,9 +1,11 @@
 # حاسبة النسبة الموزونة | Weighted Percentage Calculator
-**By [Hassam Hussain Khada Bakhsa](https://github.com/hosam382)**
+**By [Hassam](https://github.com/hosam382)**
 
 **جرّبها الحين:** https://hosam382.github.io/weighted-percentage-calculator/
 
 ![demo](demo.gif)
+
+[شاهد فيديو الشرح كامل مع الموسيقى (MP4)](demo.mp4)
 
 احسب نسبتك الموزونة للقبول في الجامعات السعودية من درجة الثانوية والقدرات والتحصيلي، واعرف **كم تحتاج** في التحصيلي (أو القدرات) عشان توصل النسبة اللي تبيها.
 
